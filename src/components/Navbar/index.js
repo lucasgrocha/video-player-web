@@ -5,8 +5,11 @@ import { Link } from 'react-router-dom';
 import './styles.css';
 
 function Navbar() {
-  // eslint-disable-next-line
-  const loggedIn = true;
+  const loggedIn = !sessionStorage.getItem('user_token');
+
+  function signOut() {
+    sessionStorage.removeItem('user_token');
+  }
 
   return (
     <div id="navbar">
@@ -18,7 +21,9 @@ function Navbar() {
         {loggedIn ? (
           <Link to="/login">Fazer Login</Link>
         ) : (
-          <a href="/users/sign_out">Fazer Logout</a>
+          <a href="/" onClick={signOut}>
+            Fazer Logout
+          </a>
         )}
       </div>
     </div>
