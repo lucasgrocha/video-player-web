@@ -1,0 +1,20 @@
+#login-wrapper {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  margin-top: 20vh;
+}
+
+#login-wrapper form input,
+label {
+  font-size: 1.6rem;
+}
+
+#login-wrapper form input {
+  padding: 1rem;
+}
+
+#login-wrapper form button {
+  font-size: 1.6rem;
+}

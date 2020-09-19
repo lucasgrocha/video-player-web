@@ -6,7 +6,7 @@ import './styles.css';
 
 function Navbar() {
   // eslint-disable-next-line
-  const loggedIn = document.cookie.split('=')[1] == false;
+  const loggedIn = true;
 
   return (
     <div id="navbar">
@@ -16,7 +16,7 @@ function Navbar() {
 
       <div id="user-area">
         {loggedIn ? (
-          <a href="/users/sign_in">Fazer Login</a>
+          <Link to="/login">Fazer Login</Link>
         ) : (
           <a href="/users/sign_out">Fazer Logout</a>
         )}

@@ -5,15 +5,17 @@ import Navbar from './components/Navbar';
 
 import Home from './pages/Home';
 import VideoShow from './pages/VideoShow';
+import Login from './pages/Login';
 
 function AppRoutes() {
   return (
     <BrowserRouter>
-    <Navbar />
+      <Navbar />
 
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/videos/:id" element={<VideoShow />} />
+        <Route path="/login" element={<Login />} />
       </Routes>
     </BrowserRouter>
   );
