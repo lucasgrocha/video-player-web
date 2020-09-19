@@ -21,9 +21,13 @@ function Navbar() {
         {loggedIn ? (
           <Link to="/login">Fazer Login</Link>
         ) : (
-          <a href="/" onClick={signOut}>
-            Fazer Logout
-          </a>
+          <>
+            <Link to="/createVideo">Upload a video</Link>
+            <span style={{ color: 'white', margin: '0 1rem' }}>|</span>
+            <a href="/" onClick={signOut}>
+              Fazer Logout
+            </a>
+          </>
         )}
       </div>
     </div>
