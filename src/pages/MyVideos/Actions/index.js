@@ -22,7 +22,7 @@ function Actions(props) {
       </div>
 
       <div className="action-button">
-        <EditIcon id="edit-icon" />
+        <EditIcon id="edit-icon" onClick={() => navigate(`/editVideo/${props.id}`)}/>
       </div>
 
       <div

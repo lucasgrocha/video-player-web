@@ -31,6 +31,24 @@ const videosService = {
       },
     });
   },
+  edit: (id) => {
+    const token = sessionStorage.getItem('user_token');
+
+    return api.get(`/video/${id}/edit`, {
+      headers: {
+        Authorization: token,
+      },
+    });
+  },
+  update: (id, data) => {
+    const token = sessionStorage.getItem('user_token');
+
+    return api.put(`/video/${id}`, data, {
+      headers: {
+        Authorization: token,
+      },
+    });
+  }
 };
 
 export default videosService;

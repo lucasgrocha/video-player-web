@@ -7,6 +7,7 @@ import Home from './pages/Home';
 import VideoShow from './pages/VideoShow';
 import Login from './pages/Login';
 import CreateVideo from './pages/CreateVideo';
+import EditVideo from './pages/EditVideo';
 import MyVideos from './pages/MyVideos';
 
 function AppRoutes() {
@@ -36,6 +37,12 @@ function AppRoutes() {
           isAuth={!loggedIn}
           path="/createVideo"
           component={<CreateVideo />}
+          redirectTo="/"
+        />
+        <PrivateRoute
+          isAuth={!loggedIn}
+          path="/editVideo/:id"
+          component={<EditVideo />}
           redirectTo="/"
         />
         <PrivateRoute
