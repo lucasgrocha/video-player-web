@@ -1,0 +1,16 @@
+.actions-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.action-button {
+  cursor: pointer;
+}
+
+.action-button svg {
+  font-size: 2.2rem;
+}
+
+.action-button + .action-button {
+  margin-left: 1rem;
+}

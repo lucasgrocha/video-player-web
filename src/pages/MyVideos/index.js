@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
+import { Table } from 'react-bootstrap';
 
 import videosService from '../../services/videosService';
+import Actions from './Actions';
 import './styles.css';
 
 function MyVideos() {
@@ -13,8 +15,37 @@ function MyVideos() {
   }, []);
 
   return (
-    <div className="container">
-      <h1>123</h1>
+    <div id="my-videos-wrapper">
+      <div className="container">
+        <Table striped bordered hover responsive>
+          <thead className="thead-dark">
+            <tr>
+              <th>Video</th>
+              <th>Name</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            {videos?.map((video) => (
+              <tr key={video.id}>
+                <td className="align-middle">
+                  <div style={{ display: 'flex', justifyContent: 'center' }}>
+                    <img
+                      src={`http://192.168.15.11:3000/${video.thumbnail_url}`}
+                      alt={`${video.name}`}
+                      style={{ maxHeight: '10rem' }}
+                    />
+                  </div>
+                </td>
+                <td className="align-middle">{video.name}</td>
+                <td className="align-middle">
+                  <Actions id={video.id} />
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </Table>
+      </div>
     </div>
   );
 }
