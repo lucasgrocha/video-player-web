@@ -13,6 +13,10 @@ const videosService = {
       },
     });
   },
+  incrementView: (id) =>
+    api.put('incrementView', {
+      id,
+    }),
   myVideos: () => {
     const token = sessionStorage.getItem('user_token');
 
@@ -48,7 +52,7 @@ const videosService = {
         Authorization: token,
       },
     });
-  }
+  },
 };
 
 export default videosService;

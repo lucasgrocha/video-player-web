@@ -31,6 +31,10 @@ function VideoShow() {
     return null;
   }
 
+  async function handleVideoStarted() {
+    await videosService.incrementView(video.id);
+  }
+
   return (
     <div className="container">
       <div id="video">
@@ -40,7 +44,7 @@ function VideoShow() {
               url={`http://192.168.15.11:3000${video.file_url}`}
               controls
               playing={true}
-              onStart={() => console.log('started')}
+              onStart={handleVideoStarted}
             />
           </div>
 
