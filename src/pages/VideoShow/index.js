@@ -41,7 +41,7 @@ function VideoShow() {
         <div id="video-box">
           <div id="player">
             <ReactPlayer
-              url={`http://192.168.15.11:3000${video.file_url}`}
+              url={`${process.env.REACT_APP_API_BASE_URL}${video.file_url}`}
               controls
               playing={true}
               onStart={handleVideoStarted}

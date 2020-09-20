@@ -9,7 +9,7 @@ function VideoCard(props) {
     <Link to={`/videos/${props.id}`} className="video-card">
       <div className="thumbnail">
         <img
-          src={`http://192.168.15.11:3000/${props.thumbnail_url}`}
+          src={`${process.env.REACT_APP_API_BASE_URL}/${props.thumbnail_url}`}
           alt="Thumb"
         />
       </div>
