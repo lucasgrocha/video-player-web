@@ -1,0 +1,20 @@
+#register-wrapper {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  margin-top: 20vh;
+}
+
+#register-wrapper form input,
+label {
+  font-size: 1.6rem;
+}
+
+#register-wrapper form input {
+  padding: 1rem;
+}
+
+#register-wrapper form button {
+  font-size: 1.6rem;
+}
