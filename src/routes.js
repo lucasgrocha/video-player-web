@@ -9,6 +9,7 @@ import Login from './pages/Login';
 import CreateVideo from './pages/CreateVideo';
 import EditVideo from './pages/EditVideo';
 import MyVideos from './pages/MyVideos';
+import Register from './pages/Register';
 
 function AppRoutes() {
   const loggedIn = !sessionStorage.getItem('user_token');
@@ -31,6 +32,12 @@ function AppRoutes() {
           isAuth={loggedIn}
           path="/login"
           component={<Login />}
+          redirectTo="/"
+        />
+        <PrivateRoute
+          isAuth={loggedIn}
+          path="/register"
+          component={<Register />}
           redirectTo="/"
         />
         <PrivateRoute

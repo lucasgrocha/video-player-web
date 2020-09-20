@@ -1,8 +1,9 @@
 import React, { useRef } from 'react';
 
 import { Form, Button } from 'react-bootstrap';
-import sessionsService from '../../services/sessionsService';
+import { Link } from 'react-router-dom';
 
+import sessionsService from '../../services/sessionsService';
 import './styles.css';
 
 function Login() {
@@ -52,8 +53,11 @@ function Login() {
           />
         </Form.Group>
         <Button variant="primary" type="submit">
-          Submit
+          Sign in
         </Button>
+        <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
+          <Link to="/register">Register new account</Link>
+        </div>
       </Form>
     </div>
   );
