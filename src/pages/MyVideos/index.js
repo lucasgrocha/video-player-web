@@ -14,6 +14,18 @@ function MyVideos() {
     });
   }, []);
 
+  function handleDeleteVideo(id) {
+    const confirmed = window.confirm(
+      'Do you really want to remove this video?'
+    );
+
+    if (!confirmed) {
+      return;
+    }
+
+    console.log(id);
+  }
+
   return (
     <div id="my-videos-wrapper">
       <div className="container">
@@ -39,7 +51,7 @@ function MyVideos() {
                 </td>
                 <td className="align-middle">{video.name}</td>
                 <td className="align-middle">
-                  <Actions id={video.id} />
+                  <Actions id={video.id} deleteClicked={handleDeleteVideo} />
                 </td>
               </tr>
             ))}

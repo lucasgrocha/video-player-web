@@ -14,3 +14,19 @@
 .action-button + .action-button {
   margin-left: 1rem;
 }
+
+#close-icon {
+  color: rgb(202, 0, 0);
+}
+
+#close-icon:active {
+  color: rgb(173, 0, 0);
+}
+
+#edit-icon {
+  color: rgb(0, 35, 190);
+}
+
+#edit-icon:active {
+  color: rgb(0, 29, 160);
+}
