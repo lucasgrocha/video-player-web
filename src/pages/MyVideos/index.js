@@ -1,10 +1,15 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 
+import videosService from '../../services/videosService';
 import './styles.css';
 
 function MyVideos() {
+  const [videos, setVideos] = useState();
+
   useEffect(() => {
-    console.log(123);
+    videosService.myVideos().then((res) => {
+      setVideos(res.data);
+    });
   }, []);
 
   return (

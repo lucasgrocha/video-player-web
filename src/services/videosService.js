@@ -13,6 +13,15 @@ const videosService = {
       },
     });
   },
+  myVideos: () => {
+    const token = sessionStorage.getItem('user_token');
+
+    return api.get('/myVideos', {
+      headers: {
+        Authorization: token,
+      },
+    });
+  },
 };
 
 export default videosService;
