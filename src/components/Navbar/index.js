@@ -22,6 +22,8 @@ function Navbar() {
           <Link to="/login">Fazer Login</Link>
         ) : (
           <>
+            <Link to="/myVideos">My Videos</Link>
+            <span style={{ color: 'white', margin: '0 1rem' }}>|</span>
             <Link to="/createVideo">Upload a video</Link>
             <span style={{ color: 'white', margin: '0 1rem' }}>|</span>
             <a href="/" onClick={signOut}>
