@@ -23,7 +23,11 @@ function MyVideos() {
       return;
     }
 
-    console.log(id);
+    videosService.destroy(id).then((res) => {
+      if (res.status === 204) {
+        setVideos((prev) => prev.filter((video) => video.id !== id));
+      }
+    });
   }
 
   return (

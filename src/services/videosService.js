@@ -22,6 +22,15 @@ const videosService = {
       },
     });
   },
+  destroy: (id) => {
+    const token = sessionStorage.getItem('user_token');
+
+    return api.delete(`/video/${id}`, {
+      headers: {
+        Authorization: token,
+      },
+    });
+  },
 };
 
 export default videosService;
