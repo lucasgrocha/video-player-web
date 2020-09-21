@@ -1,13 +1,13 @@
 import api from './api';
 
 const videosService = {
-  index: () => api.get('/video'),
-  show: (id) => api.get(`/video/${id}`),
+  index: () => api.get('/videos'),
+  show: (id) => api.get(`/videos/${id}`),
   recommended_videos: () => api.get('/recommended_videos'),
   create: (data) => {
     const token = sessionStorage.getItem('user_token');
 
-    return api.post('/video', data, {
+    return api.post('/videos', data, {
       headers: {
         Authorization: token,
       },
@@ -29,17 +29,17 @@ const videosService = {
         });
       },
       destroy: (id) => {
-        return api.delete(`/video/${id}`, {
+        return api.delete(`/videos/${id}`, {
           headers,
         });
       },
       edit: (id) => {
-        return api.get(`/video/${id}/edit`, {
+        return api.get(`/videos/${id}/edit`, {
           headers,
         });
       },
       update: (id, data) => {
-        return api.put(`/video/${id}`, data, {
+        return api.put(`/videos/${id}`, data, {
           headers,
         });
       },
