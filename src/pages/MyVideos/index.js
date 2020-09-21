@@ -9,9 +9,12 @@ function MyVideos() {
   const [videos, setVideos] = useState([]);
 
   useEffect(() => {
-    videosService.myVideos().then((res) => {
-      setVideos(res.data);
-    });
+    videosService
+      .users()
+      .myVideos()
+      .then((res) => {
+        setVideos(res.data);
+      });
   }, []);
 
   function handleDeleteVideo(id) {
@@ -23,11 +26,14 @@ function MyVideos() {
       return;
     }
 
-    videosService.destroy(id).then((res) => {
-      if (res.status === 204) {
-        setVideos((prev) => prev.filter((video) => video.id !== id));
-      }
-    });
+    videosService
+      .users()
+      .destroy(id)
+      .then((res) => {
+        if (res.status === 204) {
+          setVideos((prev) => prev.filter((video) => video.id !== id));
+        }
+      });
   }
 
   const table = (

@@ -4,25 +4,29 @@ import { Form, Button } from 'react-bootstrap';
 import { useParams, useNavigate } from 'react-router-dom';
 import videosService from '../../services/videosService';
 
-import '../CreateVideo/styles.css'
+import '../CreateVideo/styles.css';
 
 function EditVideo() {
-  const navigate = useNavigate()
-  const { id } = useParams()
-  const [name, setName] = useState('')
-  const [description, setDescription] = useState('')
+  const navigate = useNavigate();
+  const { id } = useParams();
+  const [name, setName] = useState('');
+  const [description, setDescription] = useState('');
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    videosService.edit(id).then(res => {
-      const data = res.data;
+    videosService
+      .users()
+      .edit(id)
+      .then((res) => {
+        const data = res.data;
 
-      setName(data.name)
-      setDescription(data.description)
-    }).catch(() => {
-      navigate('/myVideos')
-    })
-  }, [id, navigate])
+        setName(data.name);
+        setDescription(data.description);
+      })
+      .catch(() => {
+        navigate('/myVideos');
+      });
+  }, [id, navigate]);
 
   function handleEditVideoSubmit(evt) {
     evt.preventDefault();
@@ -30,15 +34,19 @@ function EditVideo() {
     setLoading(true);
     const data = {
       video: {
-        name, description
-      }
-    }
+        name,
+        description,
+      },
+    };
 
-    videosService.update(id, data).then(res => {
-      if (res.status === 200) {
-        navigate('/myVideos')
-      }
-    })
+    videosService
+      .users()
+      .update(id, data)
+      .then((res) => {
+        if (res.status === 200) {
+          navigate('/myVideos');
+        }
+      });
   }
 
   return (
@@ -50,7 +58,7 @@ function EditVideo() {
             <Form.Control
               name="name"
               type="text"
-              onChange={evt => setName(evt.target.value)}
+              onChange={(evt) => setName(evt.target.value)}
               value={name}
               placeholder="Enter the video name"
               required
@@ -61,7 +69,7 @@ function EditVideo() {
             <Form.Label htmlFor="description">Video Description</Form.Label>
             <Form.Control
               as="textarea"
-              onChange={evt => setDescription(evt.target.value)}
+              onChange={(evt) => setDescription(evt.target.value)}
               rows="3"
               value={description}
               placeholder="Write the video description"

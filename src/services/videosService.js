@@ -17,41 +17,33 @@ const videosService = {
     api.put('incrementView', {
       id,
     }),
-  myVideos: () => {
-    const token = sessionStorage.getItem('user_token');
 
-    return api.get('/myVideos', {
-      headers: {
-        Authorization: token,
-      },
-    });
-  },
-  destroy: (id) => {
+  users: () => {
     const token = sessionStorage.getItem('user_token');
+    const headers = { Authorization: token };
 
-    return api.delete(`/video/${id}`, {
-      headers: {
-        Authorization: token,
+    return {
+      myVideos: () => {
+        return api.get('/myVideos', {
+          headers,
+        });
       },
-    });
-  },
-  edit: (id) => {
-    const token = sessionStorage.getItem('user_token');
-
-    return api.get(`/video/${id}/edit`, {
-      headers: {
-        Authorization: token,
+      destroy: (id) => {
+        return api.delete(`/video/${id}`, {
+          headers,
+        });
       },
-    });
-  },
-  update: (id, data) => {
-    const token = sessionStorage.getItem('user_token');
-
-    return api.put(`/video/${id}`, data, {
-      headers: {
-        Authorization: token,
+      edit: (id) => {
+        return api.get(`/video/${id}/edit`, {
+          headers,
+        });
       },
-    });
+      update: (id, data) => {
+        return api.put(`/video/${id}`, data, {
+          headers,
+        });
+      },
+    };
   },
 };
 
