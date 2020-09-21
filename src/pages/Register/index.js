@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 
 import { Form, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
@@ -12,6 +12,10 @@ function Register() {
   const passwordRef = useRef(null);
   const passwordConfirmationRef = useRef(null);
   const nameRef = useRef(null);
+
+  useEffect(() => {
+    document.title = 'Sign up';
+  }, []);
 
   const handleRegister = (evt) => {
     evt.preventDefault();

@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 
 import { Form, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
@@ -9,6 +9,10 @@ import './styles.css';
 function Login() {
   const emailRef = useRef(null);
   const passwordRef = useRef(null);
+
+  useEffect(() => {
+    document.title = 'Sign in';
+  }, []);
 
   const handleLogin = (evt) => {
     evt.preventDefault();

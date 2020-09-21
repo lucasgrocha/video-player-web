@@ -18,6 +18,12 @@ function VideoShow() {
   }, [id]);
 
   useEffect(() => {
+    if (!!video) {
+      document.title = video.name;
+    }
+  }, [video]);
+
+  useEffect(() => {
     videosService.recommended_videos().then((res) => {
       setRecommendedVideos(res.data);
     });

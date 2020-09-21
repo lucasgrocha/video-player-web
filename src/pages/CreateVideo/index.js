@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 import { Form, Button } from 'react-bootstrap';
 import videosService from '../../services/videosService';
@@ -6,10 +6,14 @@ import videosService from '../../services/videosService';
 import './styles.css';
 
 function CreateVideo() {
-  const [name, setName] = useState('')
-  const [description, setDescription] = useState('')
+  const [name, setName] = useState('');
+  const [description, setDescription] = useState('');
   const [selectedFile, setSelectedFile] = useState();
   const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    document.title = 'Create video';
+  }, []);
 
   function handleCreateVideoSubmit(evt) {
     evt.preventDefault();
@@ -23,9 +27,9 @@ function CreateVideo() {
 
     videosService.create(data).then((res) => {
       if (res.status === 201) {
-        alert('Uploaded, please go to the home to see your video')
-        setDescription('')
-        setName('')
+        alert('Uploaded, please go to the home to see your video');
+        setDescription('');
+        setName('');
         setLoading(false);
       }
     });
@@ -40,7 +44,7 @@ function CreateVideo() {
             <Form.Control
               name="name"
               type="text"
-              onChange={evt => setName(evt.target.value)}
+              onChange={(evt) => setName(evt.target.value)}
               value={name}
               placeholder="Enter the video name"
               required
@@ -51,7 +55,7 @@ function CreateVideo() {
             <Form.Label htmlFor="description">Video Description</Form.Label>
             <Form.Control
               as="textarea"
-              onChange={evt => setDescription(evt.target.value)}
+              onChange={(evt) => setDescription(evt.target.value)}
               rows="3"
               value={description}
               placeholder="Write the video description"

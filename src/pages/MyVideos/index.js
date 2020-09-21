@@ -17,6 +17,10 @@ function MyVideos() {
       });
   }, []);
 
+  useEffect(() => {
+    document.title = 'My Videos';
+  }, []);
+
   function handleDeleteVideo(id) {
     const confirmed = window.confirm(
       'Do you really want to remove this video?'

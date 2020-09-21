@@ -14,6 +14,10 @@ function Home() {
     });
   }, []);
 
+  useEffect(() => {
+    document.title = 'Video Player';
+  }, []);
+
   if (!videos) {
     return null;
   }

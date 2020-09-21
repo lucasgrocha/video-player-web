@@ -17,7 +17,7 @@ function VideoCard(props) {
       <div className="info">
         <h3 id="video-name">{props.name}</h3>
         <div id="user-name">{props.userName}</div>
-        <div id="views">{props.views} visualizações</div>
+        <div id="views">{props.views} views</div>
       </div>
     </Link>
   );
