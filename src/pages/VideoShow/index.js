@@ -55,9 +55,12 @@ function VideoShow() {
           </div>
 
           <div id="video-infos">
-            <h1>{video.name}</h1>
-            <p>{video.user_name}</p>
-            <p>{video.views} visualizações</p>
+            <h1 style={{ marginTop: '1rem' }}>{video.name}</h1>
+            <h2 style={{ textAlign: 'right' }}>{video.views} views</h2>
+            <p>
+              <strong>Owner:</strong> {video.user_name}
+            </p>
+            <hr />
             <p id="description">{video.description}</p>
           </div>
         </div>
