@@ -32,7 +32,7 @@ Here are the technologies used in this project.
 ## Getting started
 
 * Download project
->    $ https://github.com/lucasgrocha/video-player-web.git
+>    $ git clone https://github.com/lucasgrocha/video-player-web.git
 * Install the libs:
 >    $ yarn install
 * Run the project:
