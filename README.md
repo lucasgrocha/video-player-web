@@ -50,7 +50,7 @@ You have to create a .env file in the root of app containing these values to con
 
 ### Home Page
 
-![Home page](https://bit.ly/33RKe1d)
+![Home page](https://github.com/lucasgrocha/markdown_images/blob/master/video_player/home.png?raw=true)
 
 ### Video player
 You can watch a video that starts automatically
