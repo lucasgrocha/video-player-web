@@ -1,68 +1,93 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## About the project
+* This repository is the frontend of the [Video Player](https://github.com/lucasgrocha/video-player) Ruby on Rails API.
+* To make this react app work properly, please follow the Video Player API documentation.
 
-In the project directory, you can run:
+Best regards.
 
-### `yarn start`
+---
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Video Player
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+This application is a platform that you can see a lot of videos and upload yours providing a name and description, when you watch a video, a view is registered, while you watch the video, you also can see a list of other videos.
 
-### `yarn test`
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Technology 
 
-### `yarn build`
+Here are the technologies used in this project.
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+* Javascript
+* React version ^16.13.1
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Javascript libs
 
-### `yarn eject`
+* axios
+* react-router-dom
+* react-bootstrap
+* react-icons
+* react-player
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Getting started
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+* Download project
+>    $ https://github.com/lucasgrocha/video-player-web.git
+* Install the libs:
+>    $ yarn install
+* Run the project:
+>    $ yarn start
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+You have to create a .env file in the root of app containing these values to consume the Rails API:
 
-## Learn More
+```
+	PORT=3006
+	REACT_APP_API_BASE_URL=http://localhost:3000
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## How to use
 
-### Code Splitting
+### Home Page
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+![Home page](https://bit.ly/33RKe1d)
 
-### Analyzing the Bundle Size
+### Video player
+You can watch a video that starts automatically
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+![Video player](https://github.com/lucasgrocha/markdown_images/blob/master/video_player/show.png?raw=true)
 
-### Making a Progressive Web App
+### Sign in page
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+You provide your email and password to sign in
 
-### Advanced Configuration
+![Sign in](https://github.com/lucasgrocha/markdown_images/blob/master/video_player/login.png?raw=true)
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+### Register page
 
-### Deployment
+You provide your name, email and password to create a new account
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+![Register page](https://github.com/lucasgrocha/markdown_images/blob/master/video_player/register.png?raw=true)
 
-### `yarn build` fails to minify
+### Create video
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+Choose a name, description and video file to upload a video
+
+![Create video](https://github.com/lucasgrocha/markdown_images/blob/master/video_player/createVideo.png?raw=true)
+
+### Edit video
+
+You change your video's data
+
+![Edit video](https://github.com/lucasgrocha/markdown_images/blob/master/video_player/editVideo.png?raw=true)
+
+### My videos
+
+A list of your uploaded videos, here you can see your video, edit and delete
+
+![My videos](https://github.com/lucasgrocha/markdown_images/blob/master/video_player/myVideos.png?raw=true)
+
+
+## Author
+
+* **Lucas G Rocha**: @lucasgrocha (https://github.com/lucasgrocha)
