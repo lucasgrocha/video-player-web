@@ -1,6 +1,6 @@
 
 ## About the project
-* This repository is the frontend of the [Video Player](https://github.com/lucasgrocha/video-player) Ruby on Rails API.
+* This repository is the frontend of the [Video Player](https://github.com/lucasgrocha/video_player) Ruby on Rails API.
 * To make this react app work properly, please follow the Video Player API documentation.
 
 Best regards.
